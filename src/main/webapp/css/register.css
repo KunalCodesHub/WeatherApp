@@ -1,0 +1,112 @@
+/* ============================================================
+   Register Page Styles
+   File: webapp/css/register.css
+   ============================================================ */
+
+/* NOTE: Background is now handled by sky-background.css */
+
+.register-page {
+    min-height: 100vh;
+    position: relative;
+}
+
+.register-wrapper {
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+.register-card {
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25) !important;
+}
+
+.register-card .card-body {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.register-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0d6efd, #3b82f6);
+    color: #ffffff;
+    font-size: 2rem;
+    box-shadow: 0 10px 25px rgba(13, 110, 253, 0.25);
+}
+
+.register-card h2 {
+    color: #0f172a;
+}
+
+.register-card .text-muted {
+    font-size: 0.95rem;
+}
+
+.input-group-text {
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    color: #475569;
+    min-width: 46px;
+    justify-content: center;
+}
+
+.register-card .form-control {
+    height: 48px;
+    border-left: none;
+}
+
+.register-card .form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: none;
+}
+
+.register-card .input-group:focus-within .input-group-text {
+    border-color: #0d6efd;
+    color: #0d6efd;
+}
+
+.register-card .btn-primary {
+    height: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0.65rem;
+}
+
+.login-link {
+    text-decoration: none;
+    font-weight: 600;
+    color: #0d6efd;
+    transition: all 0.2s ease-in-out;
+}
+
+.login-link:hover {
+    color: #0a58ca;
+    text-decoration: underline;
+}
+
+.alert {
+    font-size: 0.92rem;
+}
+
+@media (max-width: 576px) {
+    .register-card .card-body {
+        padding: 2rem 1.25rem;
+    }
+    .register-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 1.75rem;
+    }
+    .register-card h2 {
+        font-size: 1.5rem;
+    }
+}

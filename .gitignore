@@ -1,0 +1,45 @@
+# Compiled Java
+*.class
+
+# Maven build
+target/
+*.war
+*.jar
+
+# Eclipse
+.classpath
+.project
+.settings/
+.factorypath
+bin/
+
+# IntelliJ
+.idea/
+*.iml
+out/
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+logs/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Enviroment / Secrets
+.env
+config.properties
+
+# Tomcat work files
+work/
+
+# Environment files
+.env
+.env.local
+.env.production
+config.properties
+application.properties
+secrets.properties
