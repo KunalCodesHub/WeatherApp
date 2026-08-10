@@ -14,9 +14,34 @@ import com.weather.model.WeatherSearch;
 public class WeatherService {
 	
 	private WeatherSearchDAO weatherSearchDAO;
-	private static final String API_KEY = System.getenv("WEATHER_API_KEY");
+	private static final String API_KEY = getApiKey();
 	private static final String BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
-	
+
+
+	private static String getApiKey() {
+	    String key = System.getenv("WEATHER_API_KEY");
+	    
+	    if (key == null || key.trim().isEmpty()) {
+	        String errorMsg = 
+	            "══════════════════════════════════════════════════\n" +
+	            "❌ ERROR: WEATHER_API_KEY environment variable not set!\n" +
+	            "══════════════════════════════════════════════════\n" +
+	            "Get free API key from:\n" +
+	            "  https://openweathermap.org/api\n" +
+	            "\n" +
+	            "Then set it:\n" +
+	            "  Windows:  setx WEATHER_API_KEY \"your_key\"\n" +
+	            "  Linux:    export WEATHER_API_KEY=your_key\n" +
+	            "\n" +
+	            "Restart your IDE/server after setting.\n" +
+	            "══════════════════════════════════════════════════";
+	        
+	        System.err.println(errorMsg);
+	        throw new IllegalStateException("WEATHER_API_KEY not configured");
+	    }
+	    
+	    return key;
+	}
 	public WeatherService() {
 		this.weatherSearchDAO = new WeatherSearchDAOImpl();
 		

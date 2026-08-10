@@ -117,10 +117,10 @@ public class FavoriteCityDAOImpl implements FavoriteCityDAO {
 	    String country = "N/A";
 
 	    // HQL — group by country, order by count, take top 1
-	    String hql = "SELECT fc.countryName FROM FavoriteCity fc " +
+	    String hql = "SELECT fc.country FROM FavoriteCity fc " +
 	                 "WHERE fc.user.id = :userId " +
-	                 "GROUP BY fc.countryName " +
-	                 "ORDER BY COUNT(fc.countryName) DESC";
+	                 "GROUP BY fc.country " +
+	                 "ORDER BY COUNT(fc.country) DESC";
 
 	    try (Session session = HibernateUtil.getSessionFactory().openSession()) {
 
